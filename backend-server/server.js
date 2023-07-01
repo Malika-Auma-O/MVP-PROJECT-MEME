@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-// require("./connection.js");
 app.use(express.json());
-// require("dotenv").config();
-const port = 3636 //|| process.env.PORT;
+require("./modules/connection")
+require("dotenv").config();
+const port = 3636 || process.env.PORT;
 hostName = "localhost";
 const cors = require("cors");
 

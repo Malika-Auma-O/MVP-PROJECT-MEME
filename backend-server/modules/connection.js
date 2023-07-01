@@ -1,7 +1,14 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
+const URI = process.env.MongoDB_URI;
+const connectionParams = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+};
 
-const db = mongoose.connect(
-  "mongodb+srv://Malika:Auma123@cluster0.gffsotd.mongodb.net/authuser?retryWrites=true&w=majority"
-)
+const db = mongoose.connect(URI, connectionParams).then(() => {
+  console.log(`Connected to database`);
+})
+.catch(err => console.log("Error connecting to the database", err))
 
 module.exports = db

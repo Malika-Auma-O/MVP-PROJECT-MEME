@@ -7,4 +7,4 @@ router.delete("/:id", memeController.deleteMeme);
 router.put("/:id", memeController.updateMeme);
 router.get("/:userId", memeController.getUserMemes);
 
-module.exports = router;
+module.exports = router; 

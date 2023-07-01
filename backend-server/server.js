@@ -17,7 +17,7 @@ app.use(
   })
 )
 
-app.use('/memes', memesRouter);
+app.use('/meme', memesRouter);
 app.use("/user", userRouter);
 
 app.listen(port, hostName, err => {

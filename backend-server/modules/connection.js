@@ -11,4 +11,4 @@ const db = mongoose.connect(URI, connectionParams).then(() => {
 })
 .catch(err => console.log("Error connecting to the database", err))
 
-module.exports = db
+module.exports = db 

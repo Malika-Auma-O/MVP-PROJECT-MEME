@@ -5,4 +5,4 @@ router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.post("/verify", userController.verify);
 
-module.exports = router;
+module.exports = router; 

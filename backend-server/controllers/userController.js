@@ -6,6 +6,7 @@ const register = async (req, res) => {
   const checkUser = await User.findOne({email: req.body.email});
   if(checkUser) {
     res.send({msg: "account already exists"});
+    return
   }
 
   bcrypt.genSalt(10, (err, salt) => {

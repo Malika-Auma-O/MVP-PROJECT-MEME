@@ -52,7 +52,7 @@ function Register() {
         </button>
 
       <p>Have an account? {" "}
-        <a 
+        <a href="/" 
         onClick={() =>{
           toLogin();
         }} 

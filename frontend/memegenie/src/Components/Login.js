@@ -53,7 +53,7 @@ function Login() {
       </button>
       
       <p>Don't have an account? {" "}
-        <a 
+        <a href=".register" 
         onClick={() =>{
           toRegister();
         }} 

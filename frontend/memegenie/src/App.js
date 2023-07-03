@@ -1,5 +1,6 @@
 //import react-router-dom
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./Components/Navbar";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Profile from "./Components/Profile";
@@ -7,6 +8,7 @@ import Profile from "./Components/Profile";
 function App() {
   return (
     <div className="App">
+      <Navbar/>
       <Router>
         <div>
           <Routes>

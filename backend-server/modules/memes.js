@@ -3,8 +3,12 @@ const db = require("./connection");
 
 
 const MemesSchema = mongoose.Schema({
-    // randomId: mongoose.Schema.Types.ObjectId,
-    userId: String,
+//userId: String,
+    // userId: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   ref: "User",
+    //   required: true
+    // },
     topText: String,
     bottomText: String,
     url: String,

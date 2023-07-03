@@ -19,9 +19,9 @@ const postMeme = async (req, res) => {
     // randomId: randomId || mongoose.Types.ObjectId(),
     // randomId: randomId || uuidv4(),
     userId: userId,
-    url: url,
     topText: topText,
     bottomText: bottomText,
+    url: url,
   })
 
   try {

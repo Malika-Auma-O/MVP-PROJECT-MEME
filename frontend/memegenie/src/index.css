@@ -2,17 +2,126 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Yatra One', cursive;
+  background: linear-gradient(90deg, rgba(97, 176, 220, 1), rgba(97, 176, 220, 0.13));
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  background: linear-gradient(90deg,rgba(12, 49, 120, 0.99) 1.18%, rgba(50, 140, 224, 1) 100%);
+  color: #FFFF;
+  padding: 20px;
+}
+
+.left-nav {
+  display: flex;
+}
+
+.nav-logo {
+  width: 31.31px;
+  height: 26.22;
+  left: 20px;
+  top: 19px;
+  margin-left: 5px;
+}
+
+.nav-title {
+  font-size: 20.75px;
+  line-height: 24.25px;
+  font-weight: 700px;
+  letter-spacing: -0.1em;
+  margin-left: 5px;
+}
+
+.meme-form{
+  margin: 20px;
+  text-align: center;
+}
+
+input {
+  margin: 30px 5px;
+  width: 230px;
+  height: 35px;
+  padding: 0 8px;
+  top: 101px;
+  left: 36px;
+  border: 1px solid #D5D4D8;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.meme-btn {
+  width: 80%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.1em;
+  font-family: 'Yatra One', cursive;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: linear-gradient(90deg,rgba(12, 49, 120, 0.99) 1.18%, rgba(50, 140, 224, 1) 100%);
+  cursor: pointer;
+}
+
+.meme {
+  position: relative;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.meme-image {
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.meme-text {
+  position: absolute;
+  width: 80%;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 15px 0;
+  padding: 0 5px;
+  font-family: 'Yatra One', cursive;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow:
+      2px 2px 0 #000,
+      -2px -2px 0 #000,
+      2px -2px 0 #000,
+      -2px 2px 0 #000,
+      0 2px 0 #000,
+      2px 0 0 #000,
+      0 -2px 0 #000,
+      -2px 0 0 #000,
+      2px 2px 5px #000;
+}
+
+/* positions this text on the top part of the meme image */
+.bottom {
+  bottom: 0;
+}
+
+.top {
+  top: 0;
+}
+
+.register, .login{
+  width: 80%;
+  margin: 30px auto;
+  padding: 5px;
+  background: rgb(199, 233, 251);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  text-align: center;
 }

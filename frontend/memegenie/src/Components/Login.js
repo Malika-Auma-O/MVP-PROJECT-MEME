@@ -9,7 +9,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   function toRegister() {
-    navigate("register");
+    navigate("/register");
   }
 
   function login() {
@@ -29,7 +29,7 @@ function Login() {
   }
 
   return (
-    <div className="Login">
+    <div className="login">
       <input type="email"
        placeholder="email" 
        onChange={(e)=>{
@@ -45,6 +45,7 @@ function Login() {
       />
       
       <button
+      className="meme-btn"
       onClick={() => {
         login();
       }}
@@ -53,7 +54,7 @@ function Login() {
       </button>
       
       <p>Don't have an account? {" "}
-        <a href=".register" 
+        <a href="/register" 
         onClick={() =>{
           toRegister();
         }} 

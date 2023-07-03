@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Meme from "./Meme";
 
 
 function Profile() {
@@ -10,6 +9,7 @@ function Profile() {
     _id: "",
     email: "",
   });
+  
 
   useEffect(() => {
     if(localStorage.getItem("token")) {
@@ -17,23 +17,44 @@ function Profile() {
       axios.post("http://localhost:3636/user/verify", {token: localStorage.getItem("token")}).then(({data}) =>{
         if(data._id) {
           setUserData(data);
-          axios.get("http://localhost:3636/meme/" + data._id).then(({data}) =>{
-            console.log('Memes', data)
-          })
         } else {
           navigate("/");
         }
+    })
+    .catch(error =>{
+      alert(`${error}`);
     })
     } else {
       navigate("/");
     }
   },[navigate])
 
+ 
+  
+
+  function logout() {
+    localStorage.removeItem("token");
+    navigate("/");
+  }
 
   return (
     <div className="App">
-      <h1>This is the profile of {userData.email} </h1>
-      <Meme/>
+
+      <h1>Welcome to your account {userData.email} </h1>
+      <button
+      onClick={()=>logout()}
+      >
+        Logout
+      </button>
+      
+      <br/>
+      <hr/>
+      <br/>
+
+      <div className="saved-memes">
+      
+      </div>
+      
     </div>
   );
 }

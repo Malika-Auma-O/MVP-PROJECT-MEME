@@ -28,7 +28,9 @@ function Register() {
   }
 
   return (
-    <div className="Register">
+    <div className="register">
+
+      <p>Registration form</p>
       <input type="email"
        placeholder="email" 
        onChange={(e)=>{
@@ -43,7 +45,10 @@ function Register() {
       }}
       />
 
+      <br />
+
       <button
+      className="meme-btn"
       onClick={() => {
         register();
       }}

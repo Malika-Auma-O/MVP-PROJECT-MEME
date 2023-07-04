@@ -17,7 +17,7 @@ function Register() {
       if(response.data.token) {
         localStorage.setItem('token', response.data.token);
         console.log('Token saved in local storage.');
-        navigate("/profile")
+        navigate("/home")
       } else {
         alert(`Error ${response.status}: ${response.message}`);
       }
@@ -32,14 +32,14 @@ function Register() {
 
       <p>Registration form</p>
       <input type="email"
-       placeholder="email" 
+       placeholder="Enter email" 
        onChange={(e)=>{
         setEmail(e.target.value)
       }} 
       />
 
       <input type="password"
-       placeholder="password"
+       placeholder="Enter password"
        onChange={(e)=>{
         setPassword(e.target.value)
       }}

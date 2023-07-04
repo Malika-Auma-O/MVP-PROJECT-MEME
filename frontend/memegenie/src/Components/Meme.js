@@ -36,17 +36,6 @@ function Meme() {
 
 const [memesArray, setMemesArray] = useState([]);
 
-useEffect(() =>{
-  if (localStorage.getItem("token")) {
-    axios.get("http://localhost:3636/meme").then(response =>{
-      setMemesArray(response.data)
-    })
-    .catch(error =>{
-      console.log("Error fetching memes:", error);
-    })
-  }
-},[])
-
 function saveMeme() {
   if (localStorage.getItem("token")) {
     const savedMeme = {
@@ -110,6 +99,15 @@ function handleChange(event) {
         >
           Generate a random meme image!
         </button>
+        <br />
+        <button
+        onClick={saveMeme}
+        className="btn save-btn"
+        >
+          Save meme
+        </button>
+
+
         <div className="meme">
           <img src={meme.randomImage}
           alt="meme"
@@ -117,33 +115,10 @@ function handleChange(event) {
           />
           <h2 className="meme-text top">{meme.topText}</h2>
           <h2 className="meme-text bottom">{meme.bottomText}</h2>          
-        </div>
-
-        <button
-        onClick={saveMeme}
-        className="btn save-btn"
-        >
-          Save meme
-        </button> 
+        </div> 
         </div>
         :<p>No images to generate</p> }
       </div>
-
-      {/* <div className="saved">
-        {memesArray.length ? (
-          memesArray.map((meme, index) => (
-            <div key={index} className="meme">
-              <img src={meme.randomImage} alt="meme" className="meme-image" />
-              <h2 className="meme-text top">{meme.topText}</h2>
-              <h2 className="meme-text bottom">{meme.bottomText}</h2>
-            </div>
-          ))
-        ) : (
-          <p>No memes available</p>
-        )}
-      
-      </div> */}
-      
       </div>
 
     </div>

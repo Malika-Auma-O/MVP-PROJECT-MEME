@@ -18,9 +18,19 @@ function SavedMeme() {
     
   },[navigate])
 
+  function toProfile() {
+    navigate("/home");
+  }
+
   return (
     <div className="meme-form">
       <h1>Saved Memes</h1>
+      <button
+      onClick={()=>toProfile()}
+      className="btn"
+      >
+        Go Back to Make More Memes{" "}
+      </button>
       <div className="saved">
         {savedMemes.length ? (
           savedMemes.map((meme, index) => (

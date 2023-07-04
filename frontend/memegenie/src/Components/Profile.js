@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Meme from "./Meme";
 
 function Profile() {
   const navigate = useNavigate();
@@ -28,9 +29,6 @@ function Profile() {
     }
   },[navigate])
 
- 
-  
-
   function logout() {
     localStorage.removeItem("token");
     navigate("/");
@@ -42,20 +40,14 @@ function Profile() {
       <h1>Welcome to your account {userData.email} </h1>
       <button
       onClick={()=>logout()}
-      className="btn"
+      className="btn logout-btn"
       >
         Logout
       </button>
-
-      
       
       <br/>
       <hr/>
-      <br/>
-
-      <div className="saved-memes">
-      </div>
-      
+      <Meme/>      
     </div>
   );
 }

@@ -18,7 +18,7 @@ function Login() {
       if(response.data.token) {
         localStorage.setItem('token', response.data.token);
         console.log('Token saved in local storage.');
-        navigate("/profile")
+        navigate("/home")
       } else {
         alert(`Error ${response.status}: ${response.message}`);
       }
@@ -30,19 +30,24 @@ function Login() {
 
   return (
     <div className="login">
+      <p>Login page</p>
       <input type="email"
-       placeholder="email" 
+       placeholder="Enter email" 
        onChange={(e)=>{
         setEmail(e.target.value)
       }} 
       />
 
+      <br />
+
       <input type="password"
-       placeholder="password"
+       placeholder="Enter password"
        onChange={(e)=>{
         setPassword(e.target.value)
       }}
       />
+
+      <br />
       
       <button
       className="btn"

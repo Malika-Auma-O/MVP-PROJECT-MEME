@@ -36,34 +36,37 @@ function Meme() {
 
 const [memesArray, setMemesArray] = useState([]);
 
+useEffect(() =>{
+  if (localStorage.getItem("token")) {
+    axios.get("http://localhost:3636/meme").then(response =>{
+      setMemesArray(response.data)
+    })
+    .catch(error =>{
+      console.log("Error fetching memes:", error);
+    })
+  }
+},[])
+
 function saveMeme() {
-  const savedMeme = {
-    topText: meme.topText,
-    bottomText: meme.bottomText,
-    randomImage: meme.randomImage
-  };
-
-  setMemesArray(prevMeme => [...prevMeme, savedMeme]);
-
-  axios.post("http://localhost:3636/meme", savedMeme)
-  .then(response =>{
-    console.log("Meme saved:", response.data);
-  })
-  .catch((err)=>console.log('Error saving meme:', err));
+  if (localStorage.getItem("token")) {
+    const savedMeme = {
+      topText: meme.topText,
+      bottomText: meme.bottomText,
+      randomImage: meme.randomImage
+    };
+  
+    setMemesArray(prevMeme => [...prevMeme, savedMeme]);
+  
+    axios.post("http://localhost:3636/meme", savedMeme)
+    .then(response =>{
+      console.log("Meme saved:", response.data);
+      navigate("/saved-memes");
+    })
+    .catch((err)=>console.log('Error saving meme:', err));
+  } else{
+    navigate("/");
+  }
 }
-
-// const [savedMemesArray, setSavedMemesArray] = useState([]);
-
-// useEffect(() => {
-//   const savedMemes = localStorage.getItem("memes");
-//   if (savedMemes) {
-//     setSavedMemesArray(JSON.parse(savedMemes))
-//   }
-// },[])
-
-// useEffect(() =>{
-//   localStorage.setItem("memes", JSON.stringify(savedMemesArray))
-// },[savedMemesArray])
 
 function handleChange(event) {
   const {name, value} = event.target
@@ -126,7 +129,7 @@ function handleChange(event) {
         :<p>No images to generate</p> }
       </div>
 
-      <div className="saved">
+      {/* <div className="saved">
         {memesArray.length ? (
           memesArray.map((meme, index) => (
             <div key={index} className="meme">
@@ -139,7 +142,7 @@ function handleChange(event) {
           <p>No memes available</p>
         )}
       
-      </div>
+      </div> */}
       
       </div>
 

@@ -34,6 +34,8 @@ function Meme() {
     })
 }
 
+const [memesArray, setMemesArray] = useState([]);
+
 function saveMeme() {
   const savedMeme = {
     topText: meme.topText,
@@ -41,12 +43,27 @@ function saveMeme() {
     randomImage: meme.randomImage
   };
 
+  setMemesArray(prevMeme => [...prevMeme, savedMeme]);
+
   axios.post("http://localhost:3636/meme", savedMeme)
   .then(response =>{
     console.log("Meme saved:", response.data);
   })
   .catch((err)=>console.log('Error saving meme:', err));
 }
+
+// const [savedMemesArray, setSavedMemesArray] = useState([]);
+
+// useEffect(() => {
+//   const savedMemes = localStorage.getItem("memes");
+//   if (savedMemes) {
+//     setSavedMemesArray(JSON.parse(savedMemes))
+//   }
+// },[])
+
+// useEffect(() =>{
+//   localStorage.setItem("memes", JSON.stringify(savedMemesArray))
+// },[savedMemesArray])
 
 function handleChange(event) {
   const {name, value} = event.target
@@ -81,7 +98,7 @@ function handleChange(event) {
 
         
 
-      <div>
+      <div className="generate">
         {allMemes.length ?
         <div>
           <button
@@ -96,9 +113,9 @@ function handleChange(event) {
           className="meme-image"
           />
           <h2 className="meme-text top">{meme.topText}</h2>
-          <h2 className="meme-text bottom">{meme.bottomText}</h2>
+          <h2 className="meme-text bottom">{meme.bottomText}</h2>          
         </div>
-        
+
         <button
         onClick={saveMeme}
         className="btn save-btn"
@@ -106,9 +123,24 @@ function handleChange(event) {
           Save meme
         </button> 
         </div>
-        :<p>No image available</p> }
+        :<p>No images to generate</p> }
       </div>
 
+      <div className="saved">
+        {memesArray.length ? (
+          memesArray.map((meme, index) => (
+            <div key={index} className="meme">
+              <img src={meme.randomImage} alt="meme" className="meme-image" />
+              <h2 className="meme-text top">{meme.topText}</h2>
+              <h2 className="meme-text bottom">{meme.bottomText}</h2>
+            </div>
+          ))
+        ) : (
+          <p>No memes available</p>
+        )}
+      
+      </div>
+      
       </div>
 
     </div>

@@ -57,19 +57,27 @@ input {
   font-size: 12px;
 }
 
-.meme-btn {
-  width: 80%;
-  height: 40px;
+.btn {
+  padding: 8px 15px;
+  margin: 5px;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
   letter-spacing: -0.1em;
-  font-family: 'Yatra One', cursive;
   border: none;
   border-radius: 5px;
   color: white;
   background: linear-gradient(90deg,rgba(12, 49, 120, 0.99) 1.18%, rgba(50, 140, 224, 1) 100%);
   cursor: pointer;
+}
+
+.meme-btn {
+  width: 80%;
+  height: 40px; 
+}
+
+.save-btn{
+  background: linear-gradient(90deg,rgba(12, 120, 75, 0.99) 1.18%, rgb(50, 224, 137) 100%);
 }
 
 .meme {

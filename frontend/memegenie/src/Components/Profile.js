@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
 function Profile() {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
@@ -43,16 +42,18 @@ function Profile() {
       <h1>Welcome to your account {userData.email} </h1>
       <button
       onClick={()=>logout()}
+      className="btn"
       >
         Logout
       </button>
+
+      
       
       <br/>
       <hr/>
       <br/>
 
       <div className="saved-memes">
-      
       </div>
       
     </div>

@@ -4,6 +4,8 @@ import Navbar from "./Components/Navbar";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
 import Profile from "./Components/Profile";
+import Meme from "./Components/Meme";
+import SavedMeme from "./Components/SavedMeme";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register/>}/> 
             <Route path="/profile" element={<Profile/>}/>
+            <Route path="/meme" element={<Meme />} />
+            <Route path="/savedMeme" element={<SavedMeme />} />
           </Routes>
         </div>
       </Router>

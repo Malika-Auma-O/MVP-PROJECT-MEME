@@ -12,7 +12,7 @@ const getMemes = async (req, res) => {
 };
 
 const postMeme = async (req, res) => {
-  const { url, topText, bottomText, userId } = req.body;
+  const { randomImage, topText, bottomText, userId } = req.body;
 
   const meme = new MemesModel({
     // randomId: randomId || Math.round((new Date()).getTime() / 10),
@@ -21,7 +21,7 @@ const postMeme = async (req, res) => {
     userId: userId,
     topText: topText,
     bottomText: bottomText,
-    url: url,
+    randomImage: randomImage,
   })
 
   try {

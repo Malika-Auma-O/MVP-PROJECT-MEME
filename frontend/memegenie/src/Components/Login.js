@@ -45,7 +45,7 @@ function Login() {
       />
       
       <button
-      className="meme-btn"
+      className="btn"
       onClick={() => {
         login();
       }}

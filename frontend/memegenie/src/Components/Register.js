@@ -48,13 +48,13 @@ function Register() {
       <br />
 
       <button
-      className="meme-btn"
+      className="btn"
       onClick={() => {
         register();
       }}
       >
         Register
-        </button>
+      </button>
 
       <p>Have an account? {" "}
         <a href="/" 

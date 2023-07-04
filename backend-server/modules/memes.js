@@ -11,7 +11,7 @@ const MemesSchema = mongoose.Schema({
     // },
     topText: String,
     bottomText: String,
-    url: String,
+    randomImage: String,
   });
 
   const MemesModel = mongoose.model("Memes", MemesSchema);

@@ -10,7 +10,7 @@ Navigate to the project directory: cd memegenie
 Install dependencies: npm install
 
 Configuration:
-Create a .env file in the root directory and set up the following environment variable: MongoDB_URI = <your mongo-db-uri>
+Create a .env file in the root directory and set up the following environment variable: MongoDB_URI = your mongo-db-uri
 
 Usage:
 Start the development server: npm start

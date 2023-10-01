@@ -34,6 +34,7 @@ function Meme() {
     })
 }
 
+// eslint-disable-next-line
 const [memesArray, setMemesArray] = useState([]);
 
 function saveMeme() {

@@ -3,13 +3,15 @@ const app = express();
 app.use(express.json());
 require("./modules/connection")
 require("dotenv").config();
-const port = 3636 || process.env.PORT;
-hostName = "localhost";
+const port = process.env.PORT || 8080;
+hostName = "0.0.0.0";
 const cors = require("cors");
 
 const memesRouter = require("./router/memesRouter.js");
 const userRouter = require("./router/userRouter.js");
 
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000/";
+// when testing in development, change to "*"
 
 app.use(
   cors({

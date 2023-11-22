@@ -47,7 +47,7 @@ function saveMeme() {
   
     setMemesArray(prevMeme => [...prevMeme, savedMeme]);
   
-    axios.post("http://localhost:3636/meme", savedMeme)
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/meme`, savedMeme)
     .then(response =>{
       console.log("Meme saved:", response.data);
       navigate("/saved-memes");

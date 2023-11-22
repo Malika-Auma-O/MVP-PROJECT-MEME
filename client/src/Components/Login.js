@@ -13,7 +13,7 @@ function Login() {
   }
 
   function login() {
-    axios.post("http://localhost:3636/user/login", {email, password}).then((response) => {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/login`, {email, password}).then((response) => {
       console.log(response.data)
       if(response.data.token) {
         localStorage.setItem('token', response.data.token);

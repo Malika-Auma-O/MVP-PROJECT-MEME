@@ -8,7 +8,7 @@ function SavedMeme() {
 
   useEffect(()=>{
     if (localStorage.getItem("token")) {
-      axios.get("http://localhost:3636/meme").then(response =>{
+      axios.get(`${process.env.REACT_APP_BACKEND_URL}/meme`).then(response =>{
         setSavedMemes(response.data);
       })
       .catch((error) => console.log("Error fetching memes:", error));

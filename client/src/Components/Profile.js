@@ -14,7 +14,7 @@ function Profile() {
   useEffect(() => {
     if(localStorage.getItem("token")) {
       // check token and get user data
-      axios.post("http://localhost:3636/user/verify", {token: localStorage.getItem("token")}).then(({data}) =>{
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/verify`, {token: localStorage.getItem("token")}).then(({data}) =>{
         if(data._id) {
           setUserData(data);
         } else {

@@ -121,6 +121,12 @@ input {
   border-radius: 3px;
 }
 
+.meme img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
 .meme-text {
   position: absolute;
   width: 80%;
